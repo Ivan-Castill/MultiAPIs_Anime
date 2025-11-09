@@ -1,0 +1,7 @@
+{
+  "name": "MultiAPI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
