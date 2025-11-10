@@ -1,5 +1,7 @@
 # MultiAPI Anime App
 
+## Nombre: Ivan Andres Castillo Caiza
+
 ## Descripción
 
 **MultiAPI Anime App** es una aplicación móvil híbrida desarrollada con **Ionic y Angular**, que permite a los usuarios explorar, buscar y descubrir animes mediante diferentes APIs de manera interactiva y estética.  
