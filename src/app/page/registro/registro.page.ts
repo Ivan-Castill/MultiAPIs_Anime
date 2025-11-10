@@ -10,10 +10,11 @@ import { AuthService } from '../../core/auth';
 })
 export class RegistroPage {
 
-  email = '';
-  password = '';
-  confirmPassword = '';
-  loading = false;
+  email: string = '';
+password: string = '';
+confirmPassword: string = '';
+loading: boolean = false;
+
 
   constructor(private auth: AuthService, private router: Router) { }
 

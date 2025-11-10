@@ -1,62 +1,102 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Registro</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding">
-  <form (ngSubmit)="onRegister()" #form="ngForm">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        required
-        email
-      ></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        required
-        minlength="6"
-      ></ion-input>
-    </ion-item>
+<ion-content class="ion-padding" fullscreen>
+  <div class="register-container">
+    <ion-card>
+      <ion-card-header class="ion-text-center">
+        <ion-card-title>Crear Cuenta</ion-card-title>
+        <ion-card-subtitle>Completa los campos para registrarte</ion-card-subtitle>
+      </ion-card-header>
 
-    <ion-item>
-      <ion-label position="floating">Confirmar Contraseña</ion-label>
-      <ion-input
-        type="password"
-        [(ngModel)]="confirmPassword"
-        name="confirmPassword"
-        required
-      ></ion-input>
-    </ion-item>
+      <ion-card-content>
+        <form (ngSubmit)="onRegister()" #form="ngForm">
 
-    <ion-button
-      expand="block"
-      type="submit"
-      [disabled]="!form.valid || loading"
-      class="ion-margin-top"
-    >
-      <ion-spinner *ngIf="loading"></ion-spinner>
-      <span *ngIf="!loading">Registrarse</span>
-    </ion-button>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              name="email"
+              required
+              email
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="form.submitted && !email" class="error-text">
+            Ingresa un email válido.
+          </div>
 
-    <ion-button 
-      expand="block" 
-      fill="clear" 
-      routerLink="/login"
-    >
-      ¿Ya tienes cuenta? Inicia sesión
-    </ion-button>
-  </form>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input
+              type="password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              minlength="6"
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="form.submitted && password.length < 6" class="error-text">
+            La contraseña debe tener al menos 6 caracteres.
+          </div>
+
+
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input
+              type="password"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              required
+            ></ion-input>
+          </ion-item>
+          <div *ngIf="form.submitted && confirmPassword !== password" class="error-text">
+            Las contraseñas no coinciden.
+          </div>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="!form.valid || loading"
+            class="ion-margin-top"
+          >
+            <ion-spinner *ngIf="loading"></ion-spinner>
+            <span *ngIf="!loading">Registrarse</span>
+          </ion-button>
+
+          <ion-button 
+            expand="block" 
+            fill="clear" 
+            routerLink="/login"
+          >
+            ¿Ya tienes cuenta? Inicia sesión
+          </ion-button>
+
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+
+<style>
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 16px;
+  background: #f4f5f8; /* fondo suave */
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.error-text {
+  color: #e84118;
+  font-size: 0.85rem;
+  margin: 4px 0 8px 0;
+}
+</style>
