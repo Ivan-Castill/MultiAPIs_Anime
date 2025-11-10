@@ -1,0 +1,30 @@
+.center-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.anime-card {
+    padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  ion-card-header {
+    background: #cbfd5877;
+  }
+
+  ion-card-content {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+}

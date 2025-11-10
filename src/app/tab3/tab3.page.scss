@@ -1,0 +1,53 @@
+.center-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.result-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 8px;
+      font-size: 0.85rem;
+      box-sizing: border-box;
+    }
+  }
+
+  ion-card-content {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    ion-button {
+      margin-top: 8px;
+      --border-radius: 10px;
+      --background: #3880ff;
+      --color: #fff;
+    }
+  }
+}
