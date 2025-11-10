@@ -3,6 +3,10 @@
 ## Nombre: Ivan Andres Castillo Caiza
 
 ## Descripción
+Acontinuacion el link del video de tiktok para ver la presentacion del funcionamiento de la App:  https://vm.tiktok.com/ZMAWBHN7h/
+
+
+El hosting: 
 
 **MultiAPI Anime App** es una aplicación móvil híbrida desarrollada con **Ionic y Angular**, que permite a los usuarios explorar, buscar y descubrir animes mediante diferentes APIs de manera interactiva y estética.  
 La app cuenta con tres pestañas principales, cada una con funcionalidades específicas:
